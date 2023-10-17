@@ -49,12 +49,45 @@ const Login = () => {
 
   return (
     <>
-    <main className="login-container">
-      <section className="login-left">
-        <h1 className="vertical">Login</h1>
-      </section>
+      <main className="login-container">
+        <section className="login-left">
+          <h1 className="vertical">Login</h1>
+        </section>
 
-      <section className="login-right">
+        <section className="login-right">
+          <form onSubmit={handleSubmit}>
+            <div className="login-group">
+              <label htmlFor="email">Email: </label>
+              <input
+                onChange={handleEmailChange}
+                type="email"
+                name="email"
+                id="email"
+              />
+            </div>
+            <div className="login-group">
+              <label htmlFor="password">Password: </label>
+              <input
+                onChange={handlePasswordChange}
+                type="password"
+                name="password"
+                id="password"
+              />
+            </div>
+            <button type="submit">Login</button>
+          </form>
+          <div className="login-links">
+            <Link to="/register">Register</Link>
+            <Link to="/">Home</Link>
+          </div>
+        </section>
+      </main>
+
+      <main className="login-container-mob">
+        <div>
+          <h1 className="login-h1-mob">Login</h1>
+        </div>
+
         <form onSubmit={handleSubmit}>
           <div className="login-group">
             <label htmlFor="email">Email: </label>
@@ -76,52 +109,12 @@ const Login = () => {
           </div>
           <button type="submit">Login</button>
         </form>
-        <div className="login-links">
-      <Link to="/register">Register</Link>
-      <Link to="/">Home</Link>
-      </div>
-      </section>
-    </main>
-
-<main className="login-container-mob">
-  <div>
-
-  <h1 className="login-h1-mob">Login</h1>
-
-  </div>
-
-
-
-
-  <form onSubmit={handleSubmit}>
-    <div className="login-group">
-      <label htmlFor="email">Email: </label>
-      <input
-        onChange={handleEmailChange}
-        type="email"
-        name="email"
-        id="email"
-      />
-    </div>
-    <div className="login-group">
-      <label htmlFor="password">Password: </label>
-      <input
-        onChange={handlePasswordChange}
-        type="password"
-        name="password"
-        id="password"
-      />
-    </div>
-    <button type="submit">Login</button>
-  </form>
-  <div className="login-links-mob">
-<Link to="/register">Register</Link>
-<Link to="/">Home</Link>
-</div>
-
-</main>
-</>
-
+        <div className="login-links-mob">
+          <Link to="/register">Register</Link>
+          <Link to="/">Home</Link>
+        </div>
+      </main>
+    </>
   );
 };
 

@@ -1,0 +1,227 @@
+.login-container{
+    height: 44vw;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: 0;
+     padding: 0;
+}
+.login-left{
+    border: 2px solid black;
+    background-image: url('../images/login.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+    opacity: 0.95;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-right{
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+}
+
+.login-right form{
+    height: 30vw;
+    width: 95%;
+    border: 2px solid rgb(74, 64, 211);
+    border-radius: 10px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: appear-from-right 1s;
+    margin-left: auto;
+    margin-right: auto;
+
+
+
+}
+.login-right form input{
+    width: 30vw;
+    height: 2vw;
+    margin: 1vw;
+    border: 2px solid rgb(54, 43, 214);    
+    border-radius: 10px;
+    padding: 0.5vw;
+    font-size: 1.2vw;
+    outline: none;
+    color: #09218a;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.login-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.login-right form input:focus{
+    border: 2px solid rgb(74, 64, 211);
+}
+
+.login-right form button{
+    width: 8vw;
+    height: 3vw;
+    margin: 1vw;
+    border: 2px solid rgb(54, 43, 214);    
+    border-radius: 10px;
+    padding: 0.5vw;
+    font-size: 1.2vw;
+    outline: none;
+    color: #09218a;
+    font-weight: bold;
+    background-color: rgb(74, 64, 211);
+    color: whitesmoke;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.login-right form button:hover{
+    background-color: rgb(7, 3, 63);
+    color: whitesmoke;
+    scale: 1.02;
+}
+.login-links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+
+}
+@keyframes appear-from-below{
+    from{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-links a{
+    text-decoration: none;
+    color: rgb(74, 64, 211);
+    font-weight: bold;
+    font-size: 1.15vw;
+    transition: 0.5s;
+    animation: appear-from-below 1s;
+}
+.login-links a:hover{
+    color: rgb(7, 3, 63);
+    scale: 1.02;
+}
+
+/*==================MOBILE==================*/
+@media screen and (width <= 768px) {
+    .login-container{
+        display: none;
+    }
+    .login-container-mob{
+        background-image: url('../images/login.jpg');
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+    }
+    .login-h1-mob{
+        font-size: 7vw;
+        color: rgb(242, 241, 248);
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 5vw;
+        animation: appear-from-above 1s;
+        position: relative;
+        top : 10vh;
+
+    }
+    .login-container-mob form{
+        height: 50vh;
+        width: 95%;
+        border: 2px solid rgb(167, 167, 172);
+        border-radius: 10px;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        animation: appear-from-right 1s;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .login-container-mob form input{
+        width: 80vw;
+        height: 5vh;
+        margin: 1vw;
+        border: 2px solid rgb(167, 167, 172);    
+        border-radius: 10px;
+        padding: 0.5vw;
+        font-size: 1.2vw;
+        outline: none;
+        color: #09218a;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .login-container-mob label{
+        color: rgb(167, 167, 172);
+        font-weight: bold;
+    }
+    .login-container-mob form input:focus{
+        border: 2px solid rgb(74, 64, 211);
+    }
+    .login-container-mob form button{
+        width: 40vw;
+        height: 5vh;
+        margin: 5vw;
+        border: 2px solid rgb(167, 167, 172);    
+        border-radius: 10px;
+        padding: 0.5vw;
+        font-size: 4vw;
+        outline: none;
+        color: #09218a;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+    .login-container-mob form button:hover{
+        background-color: rgb(7, 3, 63);
+        color: whitesmoke;
+        scale: 1.02;
+    }
+
+    .login-links-mob{ 
+       display: flex;
+         flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin-left: 3vw;
+            margin-right: 3vw;
+    }
+    .login-links-mob a{
+        text-decoration: none;
+        color: rgb(242, 241, 248);
+        font-weight: bold;
+        font-size: 4vw;
+        transition: 0.5s;
+        animation: appear-from-below 1s;
+    }
+
+
+}

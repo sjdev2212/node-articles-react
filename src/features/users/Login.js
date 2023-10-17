@@ -1,11 +1,30 @@
 import React from 'react'
-import { useState } from 'react';
-import axios from 'axios';
+import { useState, useEffect } from 'react';
+import { useDispatch ,useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { login } from './LoginSlice';
+
 
 const Login = () => {
+    const dispatch = useDispatch();
+    const isLoading = useSelector((state) => state.loginStore.isLoading);
+    const isError = useSelector((state) => state.loginStore.isError);
+    const token = useSelector((state) => state.loginStore.token);
+
 
  const [email, setEmail] = useState("");
  const [password, setpassword] = useState("");
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (token) {
+          navigate("/welcome");
+        }
+        else{
+            navigate("/login");
+        }
+      }
+      , [token]);
 
     const handleEmailChange = (event) => {
         setEmail(event.target.value);
@@ -14,24 +33,33 @@ const Login = () => {
       const handlePasswordChange = (event) => {
         setpassword(event.target.value);
       };
-const handleSubmit = (e) => {
-    e.preventDefault();
-    const data = {
-        email: e.target.email.value,
-        password: e.target.password.value
-    }
-    axios.post('https://backendnodearticles-nppixgnv.b4a.run/api/login', data)
-    .then(res => {
-        console.log(res)
-    })
-    .catch(err => {
-        console.log(err)
-    })
+
+      const handleSubmit = async (event) => {
+        event.preventDefault();
+        const data = {
+          email,
+          password
+        };
+        dispatch(login(data));
+        if (isError) {
+          alert("Something went wrong...");
+        }
+        if (token) {
+          navigate("/welcome");
+        }
+
+       
+      }
+
+      console.log(token)
 
 
-}
   return (
     <main>
+        <h1>Login</h1>
+        {isLoading && <p>Loading...</p>}
+        {isError && <p>Something went wrong...</p>}
+     
 
         <form onSubmit={handleSubmit}>
             <div>

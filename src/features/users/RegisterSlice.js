@@ -4,7 +4,7 @@ import {toast} from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
 
 const registerSuccess = () => {
-    toast.success("Register successfull");
+    toast.success("Register successfull, please login");
     }
 
     const existingUser = () => {
@@ -12,6 +12,7 @@ const registerSuccess = () => {
         }
 
 export const register = createAsyncThunk("register/register", async (data) => {
+
   try {
     const response = await axios.post(
       "https://backendnodearticles-nppixgnv.b4a.run/api/register",

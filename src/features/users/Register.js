@@ -2,6 +2,9 @@ import React from 'react'
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { register } from './RegisterSlice';
+import '../../styles/Register.css'
+import { useNavigate} from 'react-router-dom';
+
 
 const Register = () => {
     const dispatch = useDispatch();
@@ -9,6 +12,9 @@ const Register = () => {
     const [email, setEmail] = useState("");
     const [password, setpassword] = useState("");
 
+const navigate = useNavigate();
+
+  
     const handleUsernameChange = (event) => {
         setUsername(event.target.value);
       };
@@ -28,26 +34,38 @@ const Register = () => {
           email,
           password
         };
-        dispatch(register(data));
+  
+  dispatch(register(data));
+        setUsername("");
+        setEmail("");
+        setpassword("");
+        navigate("/login")
+
+       
       }
   return (
-    <main>
-        <h1>
-            Register
-        </h1>
+    <main className="register-container">
+      <section className="register-left">
+        <h1 className="vertical">Register</h1>
+
+      </section>
+      <section className="register-right">
+
+        
 
         <form onSubmit={handleSubmit}>
             <label htmlFor="username">Username</label>
-            <input onChange={handleUsernameChange} type="text" id="username" name="username" />
+            <input  onChange={handleUsernameChange} type="text" id="username" name="username" required />
 
             <label htmlFor="email">Email</label>
-            <input onChange={handleEmailChange} type="email" id="email" name="email" />
+            <input onChange={handleEmailChange} type="email" id="email" name="email" required />
 
             <label htmlFor="password">Password</label>
-            <input onChange={handlePasswordChange} type="password" id="password" name="password" />
+            <input onChange={handlePasswordChange} type="password" id="password" name="password" required />
 
             <button type="submit">Register</button>
         </form>
+      </section>
     </main>
   )
 }

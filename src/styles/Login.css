@@ -5,6 +5,9 @@
     margin: 0;
      padding: 0;
 }
+.login-container-mob{
+    display: none;
+}
 .login-left{
     border: 2px solid black;
     background-image: url('../images/login.jpg');
@@ -138,6 +141,8 @@
         height: 100vh;
         margin: 0;
         padding: 0;
+        display: flex;
+        flex-direction: column;
     }
     .login-h1-mob{
         font-size: 7vw;

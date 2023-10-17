@@ -2,6 +2,7 @@ import './App.css';
 import  { Routes , Route} from 'react-router-dom';
 import Home from './components/Home';
 import Login from './features/users/Login';
+import WelcomePage from './components/WelcomePage';
 
 
 function App() {
@@ -14,6 +15,8 @@ function App() {
           <Home />
         } />
         <Route path="/login" element={<Login />}
+        />
+        <Route path="/welcome" element={<WelcomePage />}
         />
 
       </Routes>

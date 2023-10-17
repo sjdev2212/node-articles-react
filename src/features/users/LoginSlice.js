@@ -1,5 +1,12 @@
 import axios from "axios";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import {toast} from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
+
+
+const loginSuccess = () => {
+    toast.success("Login successfull");
+    }
 
 export const login = createAsyncThunk("login/login", async (data) => {
   try {
@@ -9,6 +16,7 @@ export const login = createAsyncThunk("login/login", async (data) => {
     );
     if (response.status === 200) {
       localStorage.setItem("token", response.data.token);
+        loginSuccess();
     }
     return response.data;
   } catch (error) {

@@ -9,7 +9,7 @@ const Home = () => {
 </h1>
 
 <p>
-    <Link to=""> <button>Sign up </button></Link> or <Link to="/login">Sign in</Link> to create an account and start posting your own articles!
+    <Link to="/register"> Sign up </Link> or <Link to="/login">Sign in</Link> to create an account and start posting your own articles!
 </p>
   <p>
     Or, if you just want to browse, click on the Articles link above to see what others have posted.

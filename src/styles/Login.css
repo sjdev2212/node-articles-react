@@ -131,6 +131,7 @@
     scale: 1.02;
 }
 
+
 /*==================MOBILE==================*/
 @media screen and (width <= 768px) {
     .login-container{

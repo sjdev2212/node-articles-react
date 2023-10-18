@@ -40,6 +40,7 @@ const Register = () => {
     navigate("/login");
   };
   return (
+      <>
     <main className="register-container">
       <section className="register-left">
         <h1 className="vertical">Register</h1>
@@ -81,6 +82,53 @@ const Register = () => {
         </div>
       </section>
     </main>
+    <main className="register-container-mob">
+   
+        <h1 className="register-h1-mob">Register</h1>
+ 
+    
+        <form onSubmit={handleSubmit}>
+          <div className="login-group">
+          <label htmlFor="username">Username</label>
+          <input
+            onChange={handleUsernameChange}
+            type="text"
+            id="username"
+            name="username"
+            required
+          />
+          </div>
+          <div className="login-group">
+
+          <label htmlFor="email">Email</label>
+          <input
+            onChange={handleEmailChange}
+            type="email"
+            id="email"
+            name="email"
+            required
+          />
+          </div>
+          <div className="login-group">
+          <label htmlFor="password">Password</label>
+          <input
+            onChange={handlePasswordChange}
+            type="password"
+            id="password"
+            name="password"
+            required
+          />
+          </div>
+
+          <button type="submit">Register</button>
+        </form>
+        <div className="login-links-mob">
+          <Link to="/login">Login</Link>
+          <Link to="/">Home</Link>
+        </div>
+  
+    </main>
+    </>
   );
 };
 

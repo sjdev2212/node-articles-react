@@ -4,7 +4,7 @@ import {toast} from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
 
 const registerSuccess = () => {
-    toast.success("Register successfull, please login");
+    toast.info("Register successfull, please login");
     }
 
     const existingUser = () => {

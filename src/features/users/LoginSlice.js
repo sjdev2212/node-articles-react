@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 const loginSuccess = () => {
-    toast.success("Login successfull");
+    toast.info("Login successfull");
     }
 
 export const login = createAsyncThunk("login/login", async (data) => {

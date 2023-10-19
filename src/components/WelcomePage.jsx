@@ -12,7 +12,7 @@ const WelcomePage = () => {
     const token = useSelector((state) => state.loginStore.token);
 
     const logingOut = () => {
-        toast.success("You have been logged out");
+        toast('logged out', {type: 'info'});
     }
    
     const dispatch = useDispatch();

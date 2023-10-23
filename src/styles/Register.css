@@ -1,17 +1,18 @@
-.register-container{
-   height: 44vw;
-   display: grid;
-   grid-template-columns: 50% 50%;
-   margin: 0;
+.register-container {
+    height: 44vw;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: 0;
     padding: 0;
 }
-.register-left{
+
+.register-left {
     border: 2px solid black;
     background-image: url('../images/pattern.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 10px;
-    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
     opacity: 0.95;
     display: flex;
     flex-direction: column;
@@ -20,49 +21,54 @@
 
 @keyframes fade-in {
     0% {
-      opacity: 0;
-      
+        opacity: 0;
+
     }
+
     100% {
-      opacity: 1;
-       
+        opacity: 1;
+
     }
-  }
+}
 
 
 .vertical {
-    writing-mode: vertical-rl; 
-  text-orientation: mixed;
-  color: whitesmoke;
-  z-index: 1;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    color: whitesmoke;
+    z-index: 1;
     font-size: 5vw;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 
-    animation : fade-in 2s infinite alternate;
+    animation: fade-in 2s infinite alternate;
 }
-.register-right{
+
+.register-right {
     display: flex;
     flex-direction: column;
     display: flex;
     flex-direction: column;
-    justify-content: center;    
+    justify-content: center;
 }
+
 @keyframes appear-from-right {
     from {
-      opacity: 0;
-      transform: translateX(50px);
+        opacity: 0;
+        transform: translateX(50px);
     }
+
     to {
-      opacity: 1;
-      transform: translateX(0);
+        opacity: 1;
+        transform: translateX(0);
     }
-  }
-.register-right form{
+}
+
+.register-right form {
     height: 30vw;
     width: 95%;
     border: 2px solid rgb(74, 64, 211);
     border-radius: 10px;
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -73,11 +79,12 @@
 
 
 }
-.register-right form input{
+
+.register-right form input {
     width: 30vw;
     height: 2vw;
     margin: 1vw;
-    border: 2px solid rgb(54, 43, 214);    
+    border: 2px solid rgb(54, 43, 214);
     border-radius: 10px;
     padding: 0.5vw;
     font-size: 1.2vw;
@@ -86,15 +93,16 @@
     font-weight: bold;
 
 }
-.register-right form input:focus{
+
+.register-right form input:focus {
     border: 2px solid rgb(74, 64, 211);
 }
 
-.register-right form button{
+.register-right form button {
     width: 8vw;
     height: 3vw;
     margin: 1vw;
-    border: 2px solid rgb(54, 43, 214);    
+    border: 2px solid rgb(54, 43, 214);
     border-radius: 10px;
     padding: 0.5vw;
     font-size: 1.2vw;
@@ -106,109 +114,121 @@
     cursor: pointer;
     transition: 0.5s;
 }
-.register-right form button:hover{
+
+.register-right form button:hover {
     background-color: rgb(7, 3, 63);
     color: whitesmoke;
 }
-.register-container-mob{
+
+.register-container-mob {
     display: none;
 }
+
 /*==================MOBILE==================*/
-@media screen and (width <= 768px) {
-  .register-container{
-      display: none;
-  }
-  .register-container-mob{
-      background-image: url('../images/login.jpg');
-      height: 100vh;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-  }
-  .register-h1-mob{
-      font-size: 7vw;
-      color: rgb(242, 241, 248);
-      font-weight: bold;
-      text-align: center;
-      margin-bottom: 5vw;
-      animation: appear-from-above 1s;
-      position: relative;
-      top : 5.1vw;
+@media screen and (width <=768px) {
+    .register-container {
+        display: none;
+    }
 
-  }
-  .register-container-mob form{
-      height: 50vh;
-      width: 95%;
-      border: 2px solid rgb(167, 167, 172);
-      border-radius: 10px;
-      display:flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      animation: appear-from-right 1s;
-      margin-left: auto;
-      margin-right: auto;
-  }
-  .register-container-mob form input{
-      width: 80vw;
-      height: 5vh;
-      margin: 1vw;
-      border: 2px solid rgb(167, 167, 172);    
-      border-radius: 10px;
-      padding: 0.5vw;
-      font-size: 1.2vw;
-      outline: none;
-      color: #09218a;
-      font-weight: bold;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-  }
-  .register-container-mob label{
-      color: rgb(167, 167, 172);
-      font-weight: bold;
-  }
-  .register-container-mob form input:focus{
-      border: 2px solid rgb(74, 64, 211);
-  }
-  .register-container-mob form button{
-      width: 40vw;
-      height: 5vh;
-      margin: 5vw;
-      border: 2px solid rgb(167, 167, 172);    
-      border-radius: 10px;
-      padding: 0.5vw;
-      font-size: 4vw;
-      outline: none;
-      color: #09218a;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.5s;
-  }
-  .register-container-mob form button:hover{
-      background-color: rgb(7, 3, 63);
-      color: whitesmoke;
-      scale: 1.02;
-  }
+    .register-container-mob {
+        background-image: url('../images/login.jpg');
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
 
-  .login-links-mob{ 
-     display: flex;
-       flex-direction: row;
-          justify-content: space-between;
-          align-items: center;
-          margin-left: 3vw;
-          margin-right: 3vw;
-  }
-  .login-links-mob a{
-      text-decoration: none;
-      color: rgb(242, 241, 248);
-      font-weight: bold;
-      font-size: 4vw;
-      transition: 0.5s;
-      animation: appear-from-below 1s;
-  }
+    .register-h1-mob {
+        font-size: 7vw;
+        color: rgb(242, 241, 248);
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 5vw;
+        animation: appear-from-above 1s;
+        position: relative;
+        top: 5.1vw;
+
+    }
+
+    .register-container-mob form {
+        height: 50vh;
+        width: 95%;
+        border: 2px solid rgb(167, 167, 172);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        animation: appear-from-right 1s;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .register-container-mob form input {
+        width: 80vw;
+        height: 5vh;
+        margin: 1vw;
+        border: 2px solid rgb(167, 167, 172);
+        border-radius: 10px;
+        padding: 0.5vw;
+        font-size: 1.2vw;
+        outline: none;
+        color: #09218a;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .register-container-mob label {
+        color: rgb(167, 167, 172);
+        font-weight: bold;
+    }
+
+    .register-container-mob form input:focus {
+        border: 2px solid rgb(74, 64, 211);
+    }
+
+    .register-container-mob form button {
+        width: 40vw;
+        height: 5vh;
+        margin: 5vw;
+        border: 2px solid rgb(167, 167, 172);
+        border-radius: 10px;
+        padding: 0.5vw;
+        font-size: 4vw;
+        outline: none;
+        color: #09218a;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+
+    .register-container-mob form button:hover {
+        background-color: rgb(7, 3, 63);
+        color: whitesmoke;
+        scale: 1.02;
+    }
+
+    .login-links-mob {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 3vw;
+        margin-right: 3vw;
+    }
+
+    .login-links-mob a {
+        text-decoration: none;
+        color: rgb(242, 241, 248);
+        font-weight: bold;
+        font-size: 4vw;
+        transition: 0.5s;
+        animation: appear-from-below 1s;
+    }
 
 
 }

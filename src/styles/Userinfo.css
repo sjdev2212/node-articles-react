@@ -1,0 +1,8 @@
+.userinfo-container{
+  display: flex;
+    flex-direction: column;
+    border: 2px solid rgb(192, 166, 166);
+    height: 40% ;
+ 
+
+}

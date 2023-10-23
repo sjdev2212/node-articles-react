@@ -3,9 +3,12 @@ display: grid;
 grid-template-columns: 15% 65% 20%;
 
 
+
   
 }
 .articles-content{
-    border: 2px solid black;
+    border: 2px solid rgb(192, 166, 166);
     width: 100%;
+    margin: 0.3vw;
+    border-radius: 10px;
 }

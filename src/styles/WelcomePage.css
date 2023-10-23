@@ -1,0 +1,11 @@
+.welcome-page-container{
+display: grid;
+grid-template-columns: 15% 65% 20%;
+
+
+  
+}
+.articles-content{
+    border: 2px solid black;
+    width: 100%;
+}

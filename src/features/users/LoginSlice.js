@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 const loginSuccess = () => {
-    toast.info("Login successfull");
+    toast.info(`Welcome ${localStorage.getItem("user")} `);
     }
 
 export const login = createAsyncThunk("login/login", async (data) => {
@@ -16,6 +16,9 @@ export const login = createAsyncThunk("login/login", async (data) => {
     );
     if (response.status === 200) {
       localStorage.setItem("token", response.data.token);
+      localStorage.setItem("user", response.data.user);
+      localStorage.setItem("avatar", response.data.avatar);
+console.log(response.data)
         loginSuccess();
     }
     return response.data;
@@ -30,11 +33,16 @@ const loginSlice = createSlice({
     isLoading: false,
     token: "",
     isError: false,
+    currentUser: "",
+    avatar : ""
   },
     reducers: {
     logout: (state, action) => {
       localStorage.removeItem("token");
       state.token = "";
+      localStorage.removeItem("user");
+      state.currentUser = "";
+
 
     },
     },
@@ -45,6 +53,8 @@ const loginSlice = createSlice({
     builder.addCase(login.fulfilled, (state, action) => {
       state.isLoading = false;
       state.token = action.payload.token;
+      state.currentUser = action.payload.user;
+      state.avatar = action.payload.avatar;
     });
     builder.addCase(login.rejected, (state, action) => {
       state.isError = true;

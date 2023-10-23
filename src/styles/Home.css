@@ -113,6 +113,9 @@
     padding-top: 5vw;
     z-index: 1;
 }
+.home-container-mob{ 
+    display: none;
+}
 
 
 /*------------------Mobile------------------*/

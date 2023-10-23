@@ -5,6 +5,7 @@ import { register } from "./RegisterSlice";
 import "../../styles/Register.css";
 import { useNavigate, Link } from "react-router-dom";
 
+
 const Register = () => {
   const dispatch = useDispatch();
   const [username, setUsername] = useState("");
@@ -47,6 +48,7 @@ const Register = () => {
       </section>
       <section className="register-right">
         <form onSubmit={handleSubmit}>
+        
           <label htmlFor="username">Username</label>
           <input
             onChange={handleUsernameChange}

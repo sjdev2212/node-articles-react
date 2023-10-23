@@ -29,6 +29,7 @@ const usersSlice = createSlice({
    builder.addCase(fetchData.fulfilled, (state, action) => {
     state.isLoading = false;
     state.allUsers = action.payload;
+  
    })
    builder.addCase(fetchData.rejected, (state, action) => {
     state.isError = true;

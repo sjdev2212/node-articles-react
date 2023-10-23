@@ -1,38 +1,37 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate} from 'react-router-dom';
-import { logout } from '../features/users/LoginSlice';
-import {toast} from "react-toastify"
-import 'react-toastify/dist/ReactToastify.css'
+import {  useSelector } from 'react-redux';
+import 'react-toastify/dist/ReactToastify.css';
+import LeftSidebar from './LeftSidebar';
+import '../styles/WelcomePage.css';
 
 
 
 const WelcomePage = () => {
-    const navigate = useNavigate();
-    const token = useSelector((state) => state.loginStore.token);
-
-    const logingOut = () => {
-        toast('logged out', {type: 'info'});
-    }
    
-    const dispatch = useDispatch();
-const logOut = () => {
-    dispatch(logout());
-    logingOut();
-    navigate("/login");
-    console.log(token);
+    const user = useSelector((state) => state.loginStore.currentUser);
+    const avatar = useSelector((state) => state.loginStore.avatar);
 
-}
 
   return (
-    <main>
+    <main className="welcome-page-container">
+        <section className="sidebar">
+        <LeftSidebar/>
+        </section>
+        <section className="articles-content">
+        <h1>Welcome to the Dashboard</h1>
+        <p>
+            This is the dashboard page
+        </p>
+        </section>
 
-        <button onClick={logOut}>
-            Log Out
-        </button>
-        <h1>
-            Welcome user!
-        </h1>
+     <section className="right-content">
+        <div>
+            <img style={{width: "80px"}} src={avatar} alt="avatar" />
+        </div>
+        <p>
+          Logged in as  {user}
+</p>
+        </section>
 
 
     </main>
